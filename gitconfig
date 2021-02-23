@@ -19,7 +19,6 @@
 	insteadOf = ssh://git@github.com/shopify/
 [alias]
         cm = checkout master
-	feap = fetch --all --prune
         fo = fetch origin
         co = checkout
         ci = commit
@@ -31,15 +30,16 @@
         rbm = rebase -i master
         rb2 = rebase -i HEAD~2
         rb3 = rebase -i HEAD~3
-        ca = commit --amend
+        ca = commit --amend --reuse-message=HEAD
+	ls = log --oneline --graph --pretty="%C(green)%h %C( bold yellow)%s%" --date=short --decorate
 [merge]
         conflictstyle = diff3
 [fetch]
         prune = true
+[pull]
+        rebase = true
 [color "branch"]
         current = yellow reverse
         local = yellow
         remote = green
-[diff]
-        algorithm = patience
 
